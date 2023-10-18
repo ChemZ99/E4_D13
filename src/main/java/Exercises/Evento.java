@@ -2,6 +2,8 @@ package Exercises;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "events")
@@ -20,6 +22,8 @@ public class Evento {
     private TipoEvento tipoEvento;
     @Column
     private  int numeroMassimoPartecipanti;
+    @OneToMany(mappedBy = "evento")
+    private List<Partecipazione> partecipazioni = new ArrayList<>();
 
     public Evento () {
 
