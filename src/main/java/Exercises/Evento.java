@@ -2,8 +2,7 @@ package Exercises;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Entity
 @Table(name = "events")
@@ -23,7 +22,10 @@ public class Evento {
     @Column
     private  int numeroMassimoPartecipanti;
     @OneToMany(mappedBy = "evento")
-    private List<Partecipazione> partecipazioni = new ArrayList<>();
+    private Set<Partecipazione> partecipazioni;
+    @ManyToOne
+    @JoinColumn(name = "location_id")
+    private Location location;
 
     public Evento () {
 
@@ -79,6 +81,22 @@ public class Evento {
 
     public void setNumeroMassimoPartecipanti(int numeroMassimoPartecipanti) {
         this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
+    }
+
+    public Set<Partecipazione> getPartecipazioni() {
+        return partecipazioni;
+    }
+
+    public void setPartecipazioni(Set<Partecipazione> partecipazioni) {
+        this.partecipazioni = partecipazioni;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     @Override
