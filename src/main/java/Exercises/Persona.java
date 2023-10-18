@@ -32,8 +32,7 @@ public class Persona {
 
     public Persona() {}
 
-    public Persona(long id, String nome, String cognome, String email, LocalDate nascita, Sesso sesso) {
-        this.id = id;
+    public Persona(String nome, String cognome, String email, LocalDate nascita, Sesso sesso) {
         this.nome = nome;
         this.cognome = cognome;
         this.email = email;

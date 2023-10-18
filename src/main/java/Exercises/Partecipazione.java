@@ -20,8 +20,7 @@ public class Partecipazione {
     private Stato stato;
     public Partecipazione(){}
 
-    public Partecipazione(long id, List<Persona> persone, Evento evento, Stato stato) {
-        this.id = id;
+    public Partecipazione(List<Persona> persone, Evento evento, Stato stato) {
         this.persone = persone;
         this.evento = evento;
         this.stato = stato;
